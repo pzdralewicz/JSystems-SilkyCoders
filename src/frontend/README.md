@@ -1,16 +1,45 @@
-# React + Vite
+﻿# RefundHelper Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React SPA for the Sinsay returns/defects PoC.
 
-Currently, two official plugins are available:
+## Current state
+- Still the Vite React template UI (`src/App.tsx`).
+- Tailwind + Shadcn tooling installed, but the screens are not implemented yet.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech stack
+- React 19 + Vite
+- TypeScript
+- TailwindCSS + Shadcn UI
 
-## React Compiler
+## Scripts
+```bash
+npm run dev
+npm run build
+npm run preview
+npm run lint
+npm run lint:fix
+npm run format
+npm run format:check
+npm run typecheck
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Structure
+```
+src/
+  App.tsx
+  App.css
+  main.tsx
+  index.css
+  assets/
+```
 
-## Expanding the ESLint configuration
+## Run
+```bash
+cd src/frontend
+npm install
+npm run dev
+```
+Vite uses the default dev port (usually `5173`).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Next steps
+Implement the intake -> upload -> chat flow per `src/frontend/AGENTS.md`.
