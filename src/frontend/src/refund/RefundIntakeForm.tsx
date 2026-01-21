@@ -1,6 +1,6 @@
 import type { PurchaseChannel, RequestType } from '../types/refund'
 import { useRefundIntakeForm } from './hooks/useRefundIntakeForm'
-import './RefundIntakeForm.css'
+import styles from './RefundIntakeForm.module.css'
 
 export const RefundIntakeForm = () => {
   const {
@@ -16,21 +16,21 @@ export const RefundIntakeForm = () => {
   } = useRefundIntakeForm()
 
   return (
-    <div className="page">
-      <header className="hero">
-        <p className="eyebrow">RefundHelper</p>
+    <div className={styles.page}>
+      <header className={styles.hero}>
+        <p className={styles.eyebrow}>RefundHelper</p>
         <h1>Return & Complaint Intake</h1>
-        <p className="subhead">
+        <p className={styles.subhead}>
           Collect refund metadata and product photo. We will wire this to the
           backend intake endpoint next.
         </p>
       </header>
 
-      <form className="form" onSubmit={handleSubmit}>
-        <section className="section">
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <section className={styles.section}>
           <h2>Request details</h2>
-          <div className="grid">
-            <label className="field">
+          <div className={styles.grid}>
+            <label className={styles.field}>
               <span>Request type</span>
               <select
                 value={formData.requestType}
@@ -46,7 +46,7 @@ export const RefundIntakeForm = () => {
               </select>
             </label>
 
-            <label className="field">
+            <label className={styles.field}>
               <span>Purchase channel</span>
               <select
                 value={formData.purchaseChannel}
@@ -62,7 +62,7 @@ export const RefundIntakeForm = () => {
               </select>
             </label>
 
-            <label className="field">
+            <label className={styles.field}>
               <span>Purchase date</span>
               <input
                 type="date"
@@ -74,7 +74,7 @@ export const RefundIntakeForm = () => {
               />
             </label>
 
-            <label className="field">
+            <label className={styles.field}>
               <span>Order ID</span>
               <input
                 type="text"
@@ -88,7 +88,7 @@ export const RefundIntakeForm = () => {
             </label>
           </div>
 
-          <label className="field">
+          <label className={styles.field}>
             <span>Description</span>
             <textarea
               placeholder="Describe the issue or reason for return."
@@ -102,9 +102,9 @@ export const RefundIntakeForm = () => {
           </label>
         </section>
 
-        <section className="section">
+        <section className={styles.section}>
           <h2>Product photo</h2>
-          <label className="field">
+          <label className={styles.field}>
             <span>Upload image</span>
             <input
               type="file"
@@ -116,22 +116,24 @@ export const RefundIntakeForm = () => {
             />
           </label>
           {image ? (
-            <p className="hint">
+            <p className={styles.hint}>
               Selected: {image.name} ({Math.round(image.size / 1024)} KB)
             </p>
           ) : (
-            <p className="hint">No image selected yet.</p>
+            <p className={styles.hint}>No image selected yet.</p>
           )}
         </section>
 
-        <section className="section">
-          <button className="primary" type="submit">
+        <section className={styles.section}>
+          <button className={styles.primary} type="submit">
             {isSubmitting ? 'Submitting…' : 'Submit intake'}
           </button>
-          {error && <p className="error">{error}</p>}
-          {successMessage && <p className="success">{successMessage}</p>}
+          {error && <p className={styles.error}>{error}</p>}
+          {successMessage && (
+            <p className={styles.success}>{successMessage}</p>
+          )}
           {submitted && !error && !successMessage && (
-            <p className="success">
+            <p className={styles.success}>
               Intake ready to submit.
             </p>
           )}
