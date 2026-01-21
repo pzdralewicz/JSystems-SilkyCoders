@@ -2,7 +2,7 @@ export type RequestType = 'RETURN' | 'COMPLAINT'
 
 export type PurchaseChannel = 'ONLINE' | 'IN_STORE'
 
-export type RefundMetadataRequest = {
+export interface RefundMetadataRequest {
   requestType: RequestType
   purchaseChannel: PurchaseChannel
   purchaseDate: string
@@ -10,9 +10,14 @@ export type RefundMetadataRequest = {
   description: string
 }
 
-export type RefundMetadataResponse = {
+export interface RefundMetadataResponse {
   intakeId: string
   conversationId: string
   createdAt: string
   status: 'RECEIVED'
+}
+
+export interface RefundMetadataMultipart {
+  metadata: RefundMetadataRequest
+  image: File
 }
