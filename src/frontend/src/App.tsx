@@ -1,4 +1,3 @@
-import './App.css'
 import { RefundIntakeForm } from './refund/RefundIntakeForm'
 
 function App() {

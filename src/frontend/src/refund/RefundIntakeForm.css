@@ -1,11 +1,8 @@
-#root {
+.page {
   max-width: 920px;
   margin: 0 auto;
   padding: 3rem 1.5rem 4rem;
   color: #111827;
-}
-
-.page {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;

@@ -1,5 +1,6 @@
 import type { PurchaseChannel, RequestType } from '../types/refund'
 import { useRefundIntakeForm } from './hooks/useRefundIntakeForm'
+import './RefundIntakeForm.css'
 
 export const RefundIntakeForm = () => {
   const {
