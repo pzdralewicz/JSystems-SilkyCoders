@@ -4,7 +4,9 @@ import com.silkycoders.RefundHelper.model.RefundMetadataRecord;
 import java.util.Optional;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class InMemoryRefundMetadataDao implements RefundMetadataDao {
 	private final ConcurrentHashMap<UUID, RefundMetadataRecord> storage = new ConcurrentHashMap<>();
 

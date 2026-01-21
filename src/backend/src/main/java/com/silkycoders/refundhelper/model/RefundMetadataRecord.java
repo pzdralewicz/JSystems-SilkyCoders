@@ -12,6 +12,7 @@ public class RefundMetadataRecord {
 	private final LocalDate purchaseDate;
 	private final String orderId;
 	private final String description;
+	private final ImageInfo imageInfo;
 	private final Instant createdAt;
 
 	public RefundMetadataRecord(
@@ -22,6 +23,7 @@ public class RefundMetadataRecord {
 		LocalDate purchaseDate,
 		String orderId,
 		String description,
+		ImageInfo imageInfo,
 		Instant createdAt
 	) {
 		this.intakeId = intakeId;
@@ -31,6 +33,7 @@ public class RefundMetadataRecord {
 		this.purchaseDate = purchaseDate;
 		this.orderId = orderId;
 		this.description = description;
+		this.imageInfo = imageInfo;
 		this.createdAt = createdAt;
 	}
 
@@ -60,6 +63,10 @@ public class RefundMetadataRecord {
 
 	public String getDescription() {
 		return description;
+	}
+
+	public ImageInfo getImageInfo() {
+		return imageInfo;
 	}
 
 	public Instant getCreatedAt() {
