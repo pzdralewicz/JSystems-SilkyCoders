@@ -1,4 +1,4 @@
-package com.silkycoders1.jsystemssilkycodders1.model;
+package com.silkycoders.RefundHelper.model;
 
 public enum Decision {
 	APPROVED,
@@ -6,3 +6,5 @@ public enum Decision {
 	NEEDS_INFO,
 	ESCALATE
 }
+
+
