@@ -2,8 +2,17 @@ import type { PurchaseChannel, RequestType } from '../types/refund'
 import { useRefundIntakeForm } from './hooks/useRefundIntakeForm'
 
 export const RefundIntakeForm = () => {
-  const { formData, image, submitted, setImage, updateField, handleSubmit } =
-    useRefundIntakeForm()
+  const {
+    formData,
+    image,
+    submitted,
+    isSubmitting,
+    error,
+    successMessage,
+    setImage,
+    updateField,
+    handleSubmit,
+  } = useRefundIntakeForm()
 
   return (
     <div className="page">
@@ -116,11 +125,13 @@ export const RefundIntakeForm = () => {
 
         <section className="section">
           <button className="primary" type="submit">
-            Save intake draft
+            {isSubmitting ? 'Submitting…' : 'Submit intake'}
           </button>
-          {submitted && (
+          {error && <p className="error">{error}</p>}
+          {successMessage && <p className="success">{successMessage}</p>}
+          {submitted && !error && !successMessage && (
             <p className="success">
-              Draft captured. Next step will submit to the backend.
+              Intake ready to submit.
             </p>
           )}
         </section>

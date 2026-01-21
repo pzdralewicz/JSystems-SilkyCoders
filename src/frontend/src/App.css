@@ -111,3 +111,9 @@
   color: #047857;
   font-weight: 600;
 }
+
+.error {
+  margin: 0.75rem 0 0;
+  color: #b91c1c;
+  font-weight: 600;
+}
